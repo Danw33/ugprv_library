@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import org.ini4j.Ini;
-import org.ini4j.InvalidFileFormatException;
 
 import com.dcscdn.ugprv.lib.system.Trace;
 
@@ -193,7 +192,7 @@ public class ConfigurationEngine {
 	 */
 	public static void ParseINI( Ini ini )
 	{
-		int parameters = Parameter.values().length;
+		//int parameters = Parameter.values().length;
 		for ( Parameter key : Parameter.values() )
 		{
 				//Loaded.put(key, ini.get(sectionName, key.));

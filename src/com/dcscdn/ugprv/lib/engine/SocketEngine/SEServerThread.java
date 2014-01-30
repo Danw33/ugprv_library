@@ -18,7 +18,7 @@ import com.dcscdn.ugprv.lib.system.Trace;
 public class SEServerThread {
 
 	private Socket ServerSocket = null;
-	private SEProtocol ServerProtocol = new SEProtocol();
+	private SEProtocol ServerProtocol;
 	
 	/**
 	 * @param ServerSocket 

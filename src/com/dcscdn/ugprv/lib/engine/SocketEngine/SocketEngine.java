@@ -40,7 +40,8 @@ public class SocketEngine {
 	/**
 	 * Starts a Multi-Threaded Server on the Given Port, with the given protocol and default maximum thread limit.
 	 * @author Daniel Wilson
-	 * @param Port The port on which the server should listen
+	 * @param Protocol The SocketEngine Protocol this server should use for handling communications.
+	 * @param Port The port on which the server should listen.
 	 */
 	public void Server( SEProtocol Protocol, int Port )
 	{
@@ -71,6 +72,10 @@ public class SocketEngine {
 	// Public Client Methods
 	/////////////////////////////////
 	
+	/**
+	 * Starts a Client connection to a SocketEngine Server
+	 * @author Daniel Wilson
+	 */
 	public void Client(){}
 	
 	

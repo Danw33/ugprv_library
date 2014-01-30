@@ -4,7 +4,7 @@
 package com.dcscdn.ugprv.lib.engine;
 
 import java.beans.PropertyVetoException;
-import java.io.PrintStream;
+//import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
@@ -31,10 +31,11 @@ public class DatabaseEngine {
 	 */
 	public ComboPooledDataSource DataSource = new ComboPooledDataSource();
 	
-	public String LogStrings;// = new String("");
+
+	//public String LogStrings;// = new String("");
 	
 	/**
-	 * 
+	 * Database Log (PrintWriter)
 	 */
 	public PrintWriter LogStream;
 	

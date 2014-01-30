@@ -5,8 +5,6 @@ package com.dcscdn.ugprv.lib.system;
 
 import java.text.SimpleDateFormat;
 
-import com.dcscdn.ugprv.lib.engine.ConfigurationEngine;
-
 import print.color.Ansi.BColor;
 import print.color.Ansi.FColor;
 import print.color.ColoredPrinter;
@@ -22,6 +20,12 @@ public class Trace {
 
 	protected static ColoredPrinter printer = new ColoredPrinter.Builder(9, false).build();
 	
+	/**
+	 * Defines if the trace functions should use "Pretty Logging",
+	 *  this includes terminal text colour and highlighting.
+	 *  
+	 *  @author Daniel Wilson
+	 */
 	public static boolean PrettyLogging = false; 
 	
 	/**
