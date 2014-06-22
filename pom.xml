@@ -31,6 +31,11 @@
   		<artifactId>ini4j</artifactId>
   		<version>0.5.2</version>
   	</dependency>
+  	<dependency>
+  		<groupId>net.sf.marineapi</groupId>
+  		<artifactId>marineapi</artifactId>
+  		<version>0.8.1</version>
+  	</dependency>
   </dependencies>
   <url>http://www.dcscdn.com/</url>
   <inceptionYear>2013</inceptionYear>
