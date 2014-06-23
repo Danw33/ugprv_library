@@ -5,11 +5,6 @@ package com.dcscdn.ugprv.lib.system;
 
 import java.text.SimpleDateFormat;
 
-import print.color.Ansi.BColor;
-import print.color.Ansi.FColor;
-import print.color.ColoredPrinter;
-import print.color.Ansi.*;
-
 /**
  * Trace System
  * Used for writing trace messages to console/logs in a common format
@@ -18,15 +13,6 @@ import print.color.Ansi.*;
  */
 public class Trace {
 
-	protected static ColoredPrinter printer = new ColoredPrinter.Builder(9, false).build();
-	
-	/**
-	 * Defines if the trace functions should use "Pretty Logging",
-	 *  this includes terminal text colour and highlighting.
-	 *  
-	 *  @author Daniel Wilson
-	 */
-	public static boolean PrettyLogging = false; 
 	
 	/**
 	 * Enumerated Trace Types (Severity Levels)
@@ -35,16 +21,6 @@ public class Trace {
 	protected static enum TraceLevel {
 		DEBUG, INFO, WARN, ERROR, FATAL;
 	}
-
-	
-	/**
-	 * Trace constructor
-	 * Responsible for initialising the trace printer
-	 * Trace printing depends on the inclusion of JCDP, which intern depends on JANSI!
-	 * @author Daniel Wilson
-	 */
-	public Trace() { super(); }
-
 	
 	
 	/**
@@ -250,18 +226,6 @@ public class Trace {
 	}
 
 	
-	
-	/**
-	 * Prints a Stack Trace for the given exception parameter
-	 * 
-	 * @param exception The exception to print a stack trace for
-	 * @author Daniel Wilson
-	 */
-	private final static void StackTrace( final Exception exception )
-	{
-		exception.printStackTrace();
-	}
-	
 	/**
 	 * Prints a Stack Trace for the given exception parameter
 	 * 
@@ -270,7 +234,8 @@ public class Trace {
 	 */
 	private final static void StackTrace( final Throwable exception )
 	{
-		exception.printStackTrace();
+		System.out.println(exception.getClass().getName() + ": " + exception.getMessage());
+		exception.printStackTrace(System.out);
 	}
 	
 	/**
@@ -286,25 +251,7 @@ public class Trace {
 		//Prepare and get a Date/Timestamp
 		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-DD HH:MM:SS");
 		
-		if( PrettyLogging == true ){
-			//Set the default foreground (text) and background (highlight) colours
-			FColor EntryForeground = FColor.WHITE;
-			BColor EntryBackground = BColor.NONE;
-			
-			//Set the colour of the log entry based on the Trace Level (E.g: Warning is Yellow)
-			if 		( level == TraceLevel.DEBUG ) 	{  EntryForeground = FColor.CYAN;  	}
-			else if ( level == TraceLevel.INFO 	) 	{  EntryForeground = FColor.BLUE;  	}
-			else if ( level == TraceLevel.WARN 	) 	{  EntryForeground = FColor.YELLOW; }
-			else if ( level == TraceLevel.ERROR ) 	{  EntryForeground = FColor.RED;  	}
-			else if ( level == TraceLevel.FATAL ) 	{  EntryForeground = FColor.WHITE;  EntryBackground = BColor.RED; };
-			
-			//Print the entry to the console
-			printer.println("[" + date.toString() + "] [" + level.toString() + "] " + message.toString() , Attribute.NONE, EntryForeground, EntryBackground);
-		}
-		else
-		{
-			System.out.println("[" + date.toString() + "] [" + level.toString() + "] " + message.toString());
-		}
+		System.out.println("[" + date.toString() + "] [" + level.toString() + "] " + message.toString());
 		
 		return;
 	}
