@@ -51,10 +51,10 @@ public class ConfigurationEngine {
 		// Getters
 		//=========
 		
-		private void registerSection(Section Section, String Identifier) {
+		//private void registerSection(Section Section, String Identifier) {
 			// TODO Auto-generated method stub
 			//Sections.put(Parameter, Section)
-		}
+		//}
 
 		/**
 		 * Get the value of of a configuration parameter.
