@@ -18,7 +18,7 @@ public class Trace {
 	 * Enumerated Trace Types (Severity Levels)
 	 * @author Daniel Wilson
 	 */
-	protected static enum TraceLevel {
+	protected static enum traceLevel {
 		DEBUG, INFO, WARN, ERROR, FATAL;
 	}
 	
@@ -30,9 +30,9 @@ public class Trace {
 	 * @param message The trace message to print
 	 * @author Daniel Wilson
 	 */
-	public final static void Debug( String message )
+	public final static void debug( String message )
 	{
-		LogEntry(message, TraceLevel.DEBUG);
+		logEntry(message, traceLevel.DEBUG);
 	}
 	
 	/**
@@ -41,9 +41,9 @@ public class Trace {
 	 * @param message The trace message to print
 	 * @author Daniel Wilson
 	 */
-	public final static void Info( String message )
+	public final static void info( String message )
 	{
-		LogEntry(message, TraceLevel.INFO);
+		logEntry(message, traceLevel.INFO);
 	}
 	
 	/**
@@ -52,9 +52,9 @@ public class Trace {
 	 * @param message The trace message to print
 	 * @author Daniel Wilson
 	 */
-	public final static void Warn( String message )
+	public final static void warn( String message )
 	{
-		LogEntry(message, TraceLevel.WARN);
+		logEntry(message, traceLevel.WARN);
 	}
 	
 	/**
@@ -63,9 +63,9 @@ public class Trace {
 	 * @param message The trace message to print
 	 * @author Daniel Wilson
 	 */
-	public final static void Error( String message )
+	public final static void error( String message )
 	{
-		LogEntry(message, TraceLevel.ERROR);
+		logEntry(message, traceLevel.ERROR);
 	}
 	
 	/**
@@ -74,9 +74,9 @@ public class Trace {
 	 * @param message The trace message to print
 	 * @author Daniel Wilson
 	 */
-	public final static void Fatal( String message )
+	public final static void fatal( String message )
 	{
-		LogEntry(message, TraceLevel.FATAL);
+		logEntry(message, traceLevel.FATAL);
 	}
 
 	
@@ -89,10 +89,10 @@ public class Trace {
 	 * @param exception The exception requiring a stack trace
 	 * @author Daniel Wilson
 	 */
-	public final static void Debug(Exception exception, String message )
+	public final static void debug(Exception exception, String message )
 	{
-		Debug(message);
-		StackTrace(exception);
+		debug(message);
+		stackTrace(exception);
 		return;
 	}
 	
@@ -103,10 +103,10 @@ public class Trace {
 	 * @param exception The exception requiring a stack trace
 	 * @author Daniel Wilson
 	 */
-	public final static void Info(Exception exception, String message )
+	public final static void info(Exception exception, String message )
 	{
-		Info(message);
-		StackTrace(exception);
+		info(message);
+		stackTrace(exception);
 		return;
 	}
 	
@@ -117,10 +117,10 @@ public class Trace {
 	 * @param exception The exception requiring a stack trace
 	 * @author Daniel Wilson
 	 */
-	public final static void Warn( Exception exception, String message )
+	public final static void warn( Exception exception, String message )
 	{
-		Warn(message);
-		StackTrace(exception);
+		warn(message);
+		stackTrace(exception);
 		return;
 	}
 	
@@ -131,10 +131,10 @@ public class Trace {
 	 * @param exception The exception requiring a stack trace
 	 * @author Daniel Wilson
 	 */
-	public final static void Error( Exception exception, String message )
+	public final static void error( Exception exception, String message )
 	{
-		Error(message);
-		StackTrace(exception);
+		error(message);
+		stackTrace(exception);
 		return;
 	}
 	
@@ -145,10 +145,10 @@ public class Trace {
 	 * @param exception The exception requiring a stack trace
 	 * @author Daniel Wilson
 	 */
-	public final static void Fatal( Exception exception, String message )
+	public final static void fatal( Exception exception, String message )
 	{
-		Fatal(message);
-		StackTrace(exception);
+		fatal(message);
+		stackTrace(exception);
 		return;
 	}
 
@@ -162,10 +162,10 @@ public class Trace {
 	 * @param exception The exception requiring a stack trace
 	 * @author Daniel Wilson
 	 */
-	public final static void Debug(Throwable exception, String message )
+	public final static void debug(Throwable exception, String message )
 	{
-		Debug(message);
-		StackTrace(exception);
+		debug(message);
+		stackTrace(exception);
 		return;
 	}
 	
@@ -176,10 +176,10 @@ public class Trace {
 	 * @param exception The exception requiring a stack trace
 	 * @author Daniel Wilson
 	 */
-	public final static void Info(Throwable exception, String message )
+	public final static void info(Throwable exception, String message )
 	{
-		Info(message);
-		StackTrace(exception);
+		info(message);
+		stackTrace(exception);
 		return;
 	}
 	
@@ -190,10 +190,10 @@ public class Trace {
 	 * @param exception The exception requiring a stack trace
 	 * @author Daniel Wilson
 	 */
-	public final static void Warn( Throwable exception, String message )
+	public final static void warn( Throwable exception, String message )
 	{
-		Warn(message);
-		StackTrace(exception);
+		warn(message);
+		stackTrace(exception);
 		return;
 	}
 	
@@ -204,10 +204,10 @@ public class Trace {
 	 * @param exception The exception requiring a stack trace
 	 * @author Daniel Wilson
 	 */
-	public final static void Error( Throwable exception, String message )
+	public final static void error( Throwable exception, String message )
 	{
-		Error(message);
-		StackTrace(exception);
+		error(message);
+		stackTrace(exception);
 		return;
 	}
 	
@@ -218,10 +218,10 @@ public class Trace {
 	 * @param exception The exception requiring a stack trace
 	 * @author Daniel Wilson
 	 */
-	public final static void Fatal( Throwable exception, String message )
+	public final static void fatal( Throwable exception, String message )
 	{
-		Fatal(message);
-		StackTrace(exception);
+		fatal(message);
+		stackTrace(exception);
 		return;
 	}
 
@@ -232,7 +232,7 @@ public class Trace {
 	 * @param exception The exception to print a stack trace for
 	 * @author Daniel Wilson
 	 */
-	private final static void StackTrace( final Throwable exception )
+	private final static void stackTrace( final Throwable exception )
 	{
 		System.out.println(exception.getClass().getName() + ": " + exception.getMessage());
 		exception.printStackTrace(System.out);
@@ -243,10 +243,10 @@ public class Trace {
 	 * 
 	 * @param message The message to log to the trace output
 	 * @param level	The severity of the log message
-	 * @see TraceLevel
+	 * @see traceLevel
 	 * @author Daniel Wilson
 	 */
-	private final static void LogEntry( String message, TraceLevel level )
+	private final static void logEntry( String message, traceLevel level )
 	{
 		//Prepare and get a Date/Timestamp
 		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-DD HH:MM:SS");
