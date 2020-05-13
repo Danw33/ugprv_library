@@ -19,7 +19,7 @@
   	<dependency>
   		<groupId>com.mchange</groupId>
   		<artifactId>mchange-commons-java</artifactId>
-  		<version>0.2.6.2</version>
+  		<version>0.2.20</version>
   	</dependency>
   	<dependency>
   		<groupId>mysql</groupId>
