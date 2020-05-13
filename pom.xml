@@ -34,7 +34,7 @@
   	<dependency>
   		<groupId>net.sf.marineapi</groupId>
   		<artifactId>marineapi</artifactId>
-  		<version>0.8.1</version>
+  		<version>0.11.0</version>
   	</dependency>
   </dependencies>
   <url>http://www.dcscdn.com/</url>
